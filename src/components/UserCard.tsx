@@ -1,0 +1,22 @@
+import { FaGithubAlt } from 'react-icons/fa';
+import type { GithubUser } from '../types';
+
+const UserCard = ({ user }: { user: GithubUser }) => {
+	return (
+		<div className="user-card">
+			<img src={user.avatar_url} alt={user.login} className="avatar" />
+			<h2>{user.name || user.login}</h2>
+			<p className="bio">{user.bio}</p>
+			<a
+				href={user.html_url}
+				target="_blank"
+				rel="noopener noreferrer"
+				className="profile-btn"
+			>
+				<FaGithubAlt /> View Profile
+			</a>
+		</div>
+	);
+};
+
+export default UserCard;
